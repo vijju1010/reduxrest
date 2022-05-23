@@ -33,7 +33,7 @@ export const getPetsAsync = () => {
     return async (dispatch) => {
         const response = await fetch('http://localhost:3001/pets');
         const pets = await response.json();
-        console.log(pets, 'pets');
+        // console.log(pets, 'pets');
         dispatch(getPets(pets));
     };
 };
@@ -46,6 +46,7 @@ export const addPetAsync = (pet) => {
             },
             body: JSON.stringify(pet),
         });
+
         dispatch(getPetsAsync());
     };
 };

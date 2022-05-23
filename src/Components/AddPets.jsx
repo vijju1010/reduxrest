@@ -29,6 +29,7 @@ const AddPets = () => {
             color: e.target.color.value,
         };
         dispatch(addPetAsync(pet));
+        e.target.reset();
     };
 
     return (

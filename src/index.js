@@ -5,12 +5,28 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { store } from './Store';
 import { Provider } from 'react-redux';
-
+import {
+    BrowserRouter,
+    Route,
+    Switch,
+    Redirect,
+    Routes,
+    Link,
+    NavLink,
+} from 'react-router-dom';
+import Login from './Components/Login';
+import Home from './Components/Home';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <Provider store={store}>
-        <App />
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<App />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/home' element={<Home />} />
+            </Routes>
+        </BrowserRouter>
     </Provider>
 );
 
